@@ -1,0 +1,4 @@
+/* Target NavLink with both classes */
+a.nav-link.active {
+  border-bottom: 2px solid black;
+}
