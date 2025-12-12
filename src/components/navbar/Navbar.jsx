@@ -44,7 +44,7 @@ function MyNavbar() {
                   <NavLink to="/blog" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>مقالات</NavLink>
                   <NavLink to="/panel" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>پنل</NavLink>
                   <NavLink to="/login" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>ورود</NavLink>
-               </Nav>  */}
+               </Nav>   */}
 
             </Offcanvas.Body>
           </Navbar.Offcanvas>
