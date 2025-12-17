@@ -9,6 +9,7 @@ import github from "../../assets/images/CourseItem/github.jpg";
 import nextjs from "../../assets/images/CourseItem/nextjs.jpg";
 import react from "../../assets/images/CourseItem/react.jpg";
 import { useState } from "react";
+import Footer from "../../components/footer/Footer";
 
 function Home() {
   const [courses, setCouses] = useState([
@@ -74,6 +75,7 @@ function Home() {
           </Row>
         </Row>
       </Container>
+    <Footer/>
     </>
   );
 }
