@@ -1,15 +1,20 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import { Link } from "react-router-dom";
 
-function CourseItem(props) {
+import './CourseItem.css'
+
+function CourseItem({id,image , title , text}) {
   return (
     <>
       <Card>
-        <Card.Img variant="top" src={props.image} />
+        <Card.Img variant="top" src={image} />
         <Card.Body>
-          <Card.Title>{props.title}</Card.Title>
-          <Card.Text>{props.text}</Card.Text>
-          <Button variant="primary">خرید دوره</Button>
+          <Card.Title>{title}</Card.Title>
+          <Card.Text>{text}</Card.Text>
+          <Button variant="primary">
+            <Link to={`/course/${id}`} className="buy-btn">خرید دوره</Link>
+          </Button>
         </Card.Body>
       </Card>
     </>

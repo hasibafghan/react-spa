@@ -3,41 +3,14 @@ import MyNavbar from "../../components/navbar/Navbar";
 import HomeImage from "../../assets/images/programming.svg";
 import CourseItem from "../../components/course/CourseItem";
 import { Container, Row, Col } from "react-bootstrap";
-// images
-import bootstrap from "../../assets/images/CourseItem/bootstrap.png";
-import github from "../../assets/images/CourseItem/github.jpg";
-import nextjs from "../../assets/images/CourseItem/nextjs.jpg";
-import react from "../../assets/images/CourseItem/react.jpg";
+
 import { useState } from "react";
 import Footer from "../../components/footer/Footer";
 
+import { data } from "../../data";
+
 function Home() {
-  const [courses, setCouses] = useState([
-    {
-      id: 1,
-      title: "بوترسترپ",
-      text: " لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم ",
-      image: bootstrap,
-    },
-    {
-      id: 2,
-      title: "گیت هاب",
-      text: " لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم ",
-      image: github,
-    },
-    {
-      id: 3,
-      title: "نکس جی اس",
-      text: " لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم ",
-      image: nextjs,
-    },
-    {
-      id: 4,
-      title: "ریکت",
-      text: " لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم ",
-      image: react,
-    },
-  ]);
+  const [courses, setCouses] = useState(data);
   return (
     <>
       <MyNavbar />
