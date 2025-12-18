@@ -1,17 +1,56 @@
-import { useParams } from 'react-router-dom';
-import './Course.css'
-import { data } from '../../data';
-function Course() {
+import "./Course.css";
+import { useParams } from "react-router-dom";
+import { data } from "../../data";
+import { Container, Row, Col } from "react-bootstrap";
+import MyNavbar from "../../components/navbar/Navbar";
 
-  const courseID = useParams().courseID
-  const courseinfo = data.find(course => course.id == courseID)
-  console.log(courseinfo);
-  
+function Course() {
+  const courseID = useParams().courseID;
+  const courseinfo = data.find((course) => course.id == courseID);
+  // console.log(courseinfo);
+
+  if (!courseinfo) {
+    return (
+      <>
+        <MyNavbar></MyNavbar>
+        <h2 style={{ textAlign: "center" }}>
+          کورسی با این مشخصات موحود نیست😒
+        </h2>
+        ;
+      </>
+    );
+  }
+
   return (
     <>
-      <h1>Course Page</h1>
+      <MyNavbar/>
+      <Container>
+        <Row className="align-items-center ">
+          <Col md={5}>
+            <img src={courseinfo.image} alt={courseinfo.title} />
+          </Col>
+          <Col md={7} className="my-3">
+            <h2 style={{ fontFamily: "Lalezar" }}>{courseinfo.title}</h2>
+            <p>مدرس: {courseinfo.teacher}</p>
+            <p style={{ fontWeight: "bold" }}>{courseinfo.text}</p>
+            <p style={{textAlign:'justify'}}>
+              لورم ايپسوم متن ساختكی با توليد سادکی نامفهوم از صنعت چاپ، وبا
+              استفاده از طراحان كرافیک است، چايكرها ومتون بلكه روزنامه ومجله در
+              ستون وسطرآنچنان كه لازم است، وبراى شرايط فعلى تكنولوثى مورد نياز،
+              وكاربردهاى متنوع با هدف بهبود ابزارهاى كاربردى مى باشد، كتابهاى
+              زيادى در شصت وسه درصد كذشته حال وآينده، شناخت فراوان جامعه
+              ومتخصصان را مى طلبد، تابا نرم افزارها شناخت بيشترى را براى طراحان
+              رايانه اى على الخصوص طراحان خلاقى، وفرهنك پیشرو در زبان فارسى
+              ايجاد کرد، در اين صورت مى توان اميد داشت كه تمام ودشوارى موجود در
+              ارائه راهكارها، و شرايط سخت تايپ به پايان رسد وزمان مورد نياز شامل
+              حروفچينى دستاوردهاى اصلى، وجوابكوى سوالات پيوسته اهل دنياى موجود
+              طراحى اساسا مورد استفاده قرار گیرد.
+            </p>
+          </Col>
+        </Row>
+      </Container>
     </>
   );
 }
 
-export default Course
+export default Course;
