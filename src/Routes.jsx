@@ -1,9 +1,11 @@
+import PrivateRoute from "./components/PrivateRoute";
 import About from "./pages/about/About";
 import Blog from "./pages/blog/Blog";
 import Course from "./pages/course/Course";
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import Panel from "./pages/panel/Panel";
+import Setting from "./Setting";
 
 const routes = [
   { path: "/", element: <Home /> },
@@ -18,9 +20,25 @@ const routes = [
       { path: "python", element: <h2>python بهترین است</h2> },
     ],
   },
-  { path: "/panel", element: <Panel /> },
-  { path: "/course/:courseID", element: <Course /> },
-
+  {
+    path: "/panel",
+    element: (
+      <PrivateRoute>
+        <Panel />
+      </PrivateRoute>
+    ),
+  },
+  {
+    path: "/setting",
+    element: (
+      <PrivateRoute>
+        <Setting />
+      </PrivateRoute>
+    ),
+  },
+  {
+    path: "/course/:courseID", element: <Course />,
+  },
 ];
 
-export default routes
+export default routes;
