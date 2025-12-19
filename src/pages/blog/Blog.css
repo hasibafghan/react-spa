@@ -1,0 +1,10 @@
+.blog{
+    text-align: center;
+}
+.linkBtn{
+    padding: 5px 15px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    margin: 0 5px;
+    text-decoration: none;
+}
